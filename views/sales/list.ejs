@@ -1,0 +1,57 @@
+<!-- /views/sales/list.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">POS Strategy System</div>
+    <div>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/sales">Sales</a>
+      <a href="/logout">Logout</a>
+    </div>
+  </nav>
+
+  <div class="center-box" style="max-width:900px;">
+    <h1>Sales Records</h1>
+
+    <a href="/sales/add"><button>Add New Sale</button></a>
+
+    <table style="width:100%; margin-top:20px; border-collapse: collapse;">
+      <tr style="background:#eee;">
+        <th style="padding:10px; border:1px solid #ccc;">Product</th>
+        <th style="padding:10px; border:1px solid #ccc;">Qty</th>
+        <th style="padding:10px; border:1px solid #ccc;">Price</th>
+        <th style="padding:10px; border:1px solid #ccc;">Total</th>
+        <th style="padding:10px; border:1px solid #ccc;">Date</th>
+      </tr>
+
+      <% sales.forEach(sale => { %>
+        <tr>
+          <td style="padding:10px; border:1px solid #ccc;"><%= sale.product_name %></td>
+          <td style="padding:10px; border:1px solid #ccc;"><%= sale.quantity %></td>
+          <td style="padding:10px; border:1px solid #ccc;">₱<%= sale.price %></td>
+          <td style="padding:10px; border:1px solid #ccc;">₱<%= sale.total %></td>
+          <td style="padding:10px; border:1px solid #ccc;"><%= sale.created_at.toLocaleString() %></td>
+        </tr>
+      <% }) %>
+
+      <% if (sales.length === 0) { %>
+        <tr>
+          <td colspan="5" style="text-align:center; padding:20px;">No sales recorded yet.</td>
+        </tr>
+      <% } %>
+    </table>
+
+  </div>
+
+</body>
+</html>

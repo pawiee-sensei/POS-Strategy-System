@@ -1,0 +1,34 @@
+<!-- /views/dashboard.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">POS Strategy System</div>
+    <div>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/sales">Sales</a>
+      <a href="/logout">Logout</a>
+    </div>
+  </nav>
+
+  <!-- DASHBOARD CONTENT -->
+  <div class="center-box">
+    <h1>Welcome, <%= user.name %>!</h1>
+    <p>Your dashboard is ready.</p>
+
+    <div style="margin-top: 30px;">
+      <a href="/sales"><button>Go to Sales</button></a>
+    </div>
+  </div>
+
+</body>
+</html>

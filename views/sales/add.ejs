@@ -1,0 +1,37 @@
+<!-- /views/sales/add.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">POS Strategy System</div>
+    <div>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/sales">Sales</a>
+      <a href="/logout">Logout</a>
+    </div>
+  </nav>
+
+  <div class="center-box">
+    <h1>Add Sale</h1>
+
+    <form action="/sales/add" method="POST">
+      <input type="text" name="product_name" placeholder="Product Name" required>
+      <input type="number" name="quantity" placeholder="Quantity" required>
+      <input type="number" name="price" placeholder="Price per item" step="0.01" required>
+      <button type="submit">Save Sale</button>
+    </form>
+
+    <a class="small-link" href="/sales">Back to Sales</a>
+  </div>
+
+</body>
+</html>
