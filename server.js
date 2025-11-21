@@ -3,6 +3,7 @@ require('dotenv').config();
 
 const app = require('./config/app');
 const pool = require('./config/db');
+const inventoryRoutes = require('./routes/inventoryRoutes');
 
 // =========================
 // TEST DATABASE CONNECTION
@@ -29,6 +30,7 @@ app.use('/', indexRoutes);
 app.use('/', authRoutes);
 app.use('/', dashboardRoutes);
 app.use('/', salesRoutes);
+app.use('/', inventoryRoutes);
 
 // =========================
 // START SERVER

@@ -12,22 +12,30 @@
 
   <!-- NAVBAR -->
   <nav>
-    <div class="logo">POS Strategy System</div>
-    <div>
-      <a href="/dashboard">Dashboard</a>
-      <a href="/sales">Sales</a>
-      <a href="/logout">Logout</a>
-    </div>
-  </nav>
+  <div class="logo">POS Strategy System</div>
+  <div>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/sales">Sales</a>
+    <a href="/inventory">Inventory</a>   <!-- ✅ NEW -->
+    <a href="/logout">Logout</a>
+  </div>
+</nav>
+
 
   <!-- DASHBOARD CONTENT -->
   <div class="center-box">
     <h1>Welcome, <%= user.name %>!</h1>
     <p>Your dashboard is ready.</p>
 
+    <!-- Sales Button-->
     <div style="margin-top: 30px;">
       <a href="/sales"><button>Go to Sales</button></a>
     </div>
+    <!-- Inventory Button-->
+    <div style="margin-top: 15px;">
+  <a href="/inventory"><button>Go to Inventory</button></a>
+</div>
+
   </div>
 
 </body>

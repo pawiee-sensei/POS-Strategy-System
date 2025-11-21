@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">POS Strategy System</div>
+  <div>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/sales">Sales</a>
+    <a href="/inventory">Inventory</a>
+    <a href="/logout">Logout</a>
+  </div>
+</nav>
+
+<div class="center-box" style="max-width:900px;">
+  <h1>Inventory</h1>
+
+  <a href="/inventory/add"><button>Add Item</button></a>
+
+  <table style="width:100%; margin-top:20px; border-collapse: collapse;">
+    <tr style="background:#eee;">
+      <th>Name</th>
+      <th>Stock</th>
+      <th>Price</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+
+    <% items.forEach(item => { %>
+        <tr>
+            <td><%= item.product_name %></td>
+            <td><%= item.quantity %></td>
+            <td>₱<%= item.selling_price %></td>
+
+            <td style="color:<%= item.quantity < 5 ? 'red' : 'green' %>;">
+                <%= item.quantity < 5 ? 'Low Stock' : 'OK' %>
+            </td>
+            
+            <td>
+                <a href="/inventory/edit/<%= item.id %>">Edit</a> |
+                <a href="/inventory/delete/<%= item.id %>" style="color:red;">Delete</a>
+            </td>
+        </tr>
+
+    <% }) %>
+
+    <% if (items.length === 0) { %>
+      <tr>
+        <td colspan="5" style="text-align:center; padding:20px;">
+          No inventory items yet.
+        </td>
+      </tr>
+    <% } %>
+  </table>
+</div>
+
+</body>
+</html>

@@ -6,7 +6,7 @@ const router = express.Router();
 
 const authController = require('../controllers/authController');
 const redirectIfAuthenticated = require('../middleware/redirectIfAuthenticated');
-const ensureAuthenticated = require('../middleware/redirectIfAuthenticated');
+const ensureAuthenticated = require('../middleware/ensureAuthenticated');  // ✅ FIXED
 
 // Show login page
 router.get('/login', redirectIfAuthenticated, authController.getLoginPage);
